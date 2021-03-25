@@ -46,9 +46,24 @@ Listen for WebSocket connections on a particular path and print messages to STDO
 
 	wssh3 -l localhost:8000/websocket
 
+example: connect to coinbase BCH-USD socket and see trades from command-line:
+
+	echo '{"type":"subscribe","product_ids":["BCH-USD"],"channels":["ticker"]}' | wssh3 -n wss://ws-feed.pro.coinbase.com/ | grep --line-buffered trade_id
+
 Once connected you can use STDIN to send messages. Each line is a message. You can just as well open a peristent client connection that prints incoming messages to STDOUT and sends messages from STDIN interactively:
 
 	wssh3 localhost:8000/websocket
+
+## Notes
+
+if you use wssh3 called from a script, called from your server, check if the webserver / root user can properly access wssh3 and use it properly.
+
+Stream scripts work from the command-line but not from the cron?
+because root user cannot gracefully call wssh3!
+
+copy gevent, greenlet, zope, ws4py, wssh3 files from .local/lib/python3.6/site-packages/ to /usr/local/lib/python3.6/site-packages
+then chown -R root:staff /usr/local/lib/python3.6/site-packages
+now root can run wssh3 without error!
 
 ## Contributing
 
