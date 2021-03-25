@@ -1,0 +1,12 @@
+README.md
+setup.py
+wssh3/__init__.py
+wssh3/client.py
+wssh3/common.py
+wssh3/server.py
+wssh3.egg-info/PKG-INFO
+wssh3.egg-info/SOURCES.txt
+wssh3.egg-info/dependency_links.txt
+wssh3.egg-info/entry_points.txt
+wssh3.egg-info/requires.txt
+wssh3.egg-info/top_level.txt
