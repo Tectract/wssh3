@@ -48,7 +48,7 @@ Listen for WebSocket connections on a particular path and print messages to STDO
 
 example: connect to coinbase BCH-USD socket and see trades from command-line:
 
-	echo '{"type":"subscribe","product_ids":["BCH-USD"],"channels":["ticker"]}' | wssh3 -n wss://ws-feed.pro.coinbase.com/ | grep --line-buffered trade_id
+	echo '{"type":"subscribe","product_ids":["BCH-USD"],"channels":["ticker"]}' | wssh3 -n wss://ws-feed.exhange.coinbase.com/ | grep --line-buffered trade_id
 
 Once connected you can use STDIN to send messages. Each line is a message. You can just as well open a peristent client connection that prints incoming messages to STDOUT and sends messages from STDIN interactively:
 
